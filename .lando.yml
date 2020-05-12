@@ -1,0 +1,14 @@
+name: wordpress-app
+recipe: wordpress
+proxy:
+  pma:
+    - pma.wordpress.lndo.site
+config:
+  webroot: .
+  via: nginx
+  xdebug: true
+services:
+  pma:
+    type: phpmyadmin
+    host:
+      - database
